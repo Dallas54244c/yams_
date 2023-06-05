@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+
+  Joueur:
+    image: yams:Joueur
+    environment:
+      - SERVER_IP=172.28.0.253
+    networks:
+      testing_net:
+        ipv4_address: 172.28.0.251
+
+
+  Hebergeur:
+    image: yams:Hebergeur
+    environment:
+      - SERVER_IP=172.28.0.253
+    networks:
+      testing_net:
+        ipv4_address: 172.28.0.254
+
+
+
+
+  Proba:
+    image: yams:Proba
+    environment:
+      - SERVER_IP=172.28.0.253
+    networks:
+      testing_net:
+        ipv4_address: 172.28.0.255
+
+
+
+  Appariement:
+    image: yams:Appariement
+    environment:
+      - SERVER_IP=172.28.0.253
+    networks:
+      testing_net:
+        ipv4_address: 172.28.0.253
+
+
+
+
+
