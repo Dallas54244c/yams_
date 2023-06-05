@@ -2,6 +2,7 @@ package com.example.appariement;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
+import org.springframework.boot.SpringApplication;
 
 @ApplicationPath("/api")
 public class Appariement extends Application {

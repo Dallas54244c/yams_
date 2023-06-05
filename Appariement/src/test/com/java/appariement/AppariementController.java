@@ -1,5 +1,6 @@
-package com.example.appariement;
+package com.java.appariement;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -9,6 +10,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AppariementController {
     private Map<Integer, Hebergeur> hebergeurs = new HashMap<>();
     private final ProbaService probaService;
+
+
+    public Map<Integer, Hebergeur> getHebergeurs() {
+        return hebergeurs;
+    }
+
+    public ProbaService getProbaService() {
+        return probaService;
+    }
 
     public AppariementController(ProbaService probaService) {
         this.probaService = probaService;
@@ -30,16 +40,14 @@ public class AppariementController {
         }
     }
 
-    public int trouverHebergeurMoinsCharge() {
+    int trouverHebergeurMoinsCharge() {
         return hebergeurs.entrySet().stream()
                 .min(Comparator.comparingInt(e -> e.getValue().getJoueurs().size()))
                 .map(Map.Entry::getKey)
                 .orElse(-1);
     }
 
-
-
-    public static class Hebergeur {
+    static class Hebergeur {
         private int id;
         private List<String> joueurs;
 
@@ -61,7 +69,7 @@ public class AppariementController {
         }
     }
 
-    public static class ProbaService {
+    static class ProbaService {
         // a remplir
         public double getProba(String coup) {
             return new Random().nextDouble();

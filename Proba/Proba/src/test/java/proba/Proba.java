@@ -1,4 +1,4 @@
-package com.example.proba;
+package proba;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
